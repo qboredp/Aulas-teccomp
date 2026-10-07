@@ -6,14 +6,12 @@
   <title>Document</title>
 </head>
 <style>
-  #a{
 
-  }
 </style>
 <body>
   <header>
     <nav>
-      <p id="a">Menu 1</p>
+      <p >Menu 1</p>
       <p>Menu 2</p>
       <p>Menu 3</p>
     </nav>
@@ -26,7 +24,8 @@
     <p>Comandos para pegar os elementos.</p>
   </main>
    <script>
-     document.getElementById('a').innerHTML='item 1';
+     document.getElementsByTagName('p')[0].innerHTML='item 1';
+     document.getElementsByTagName('p')[1].innerHTML='item 2';
      
   </script> 
 </body>
