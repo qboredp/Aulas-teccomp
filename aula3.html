@@ -18,6 +18,8 @@
       <p>Menu 3</p>
     </nav>
   </header>
+  <button>Ocultar div</button>
+  <button>Mostrar div</button>
   <main>
     <h2 id="titulo">Aula 3 - Javascript DOM</h2>
     <p class="comandos">getElementById</p>
@@ -33,9 +35,9 @@
     <p id="ex5">5 - Colocar uma borda na div com o querySelector.</p>
     <p id="ex6">6 - alterar o tamanho do texto do primeiro exercicio utilizado querySelector.</p>
     <p id="ex7">7 - alterar o texto para negrito do elemento da primeira casse "comandos" utilizando querySelector.</p>
-    <p id="ex8">8 - </p>
-    <p id="ex9">9 - </p>
-    <p id="ex10">10 -</p>
+    <p id="ex8">8 - alterar a div: arredondar as bordas, cor de fundo rosa claro, cor do texto branco.</p>
+    <p id="ex9">9 - alterar exercicios 1 e 2 para variaveis</p>
+    <p id="ex10">10 - colocar os botoes para funcionar</p>
   </div>
   <script>
     // ex1
@@ -48,13 +50,31 @@
     document.getElementsByClassName("comandos")[2].innerHTML = document.getElementsByClassName("comandos")[2].innerHTML + "()";
     // ex4
     document.getElementById("ex1").style.color = "green";
-    document.getElementsByClassName("comandos")[1].style.color = "green";
+    document.getElementsByClassName("comandos")[0].style.color = "green";
     // ex5
     document.querySelector("div").style.border = "3px dashed red";
     // ex6
     document.querySelector("div p").style.fontSize = "24px";
     // ex7
     document.querySelector(".comandos").style.fontWeight = "bold";
+    // ex8
+    document.querySelector("div").style.borderRadius = "15px";
+    document.querySelector("div").style.backgroundColor = "pink";
+    document.querySelector("div").style.color = "#00008B";
+    // ex9
+    let ex1 = document.getElementById("ex1");
+    let ex2 = document.getElementById("ex2");
+
+    ex1.innerHTML = "Item 1";
+    ex2.innerHTML = "Item 2";
+    // ex10
+    document.getElementsByTagName("button")[0].onclick = function () {
+      document.querySelector("div").style.display = "none";
+    };
+
+    document.getElementsByTagName("button")[1].onclick = function () {
+      document.querySelector("div").style.display = "block";
+    };
   </script>
 </body>
 
