@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
 <style>
 
 </style>
+
 <body>
   <header>
     <nav>
-      <p >Menu 1</p>
+      <p>Menu 1</p>
       <p>Menu 2</p>
       <p>Menu 3</p>
     </nav>
@@ -23,13 +25,26 @@
     <p class="comandos">getElementsByClassName</p>
     <p>Comandos para pegar os elementos.</p>
   </main>
-   <script>
-     document.getElementsByTagName('p')[0].innerHTML='item 1';
-     document.getElementsByTagName('p')[1].innerHTML='item 2';
-     document.getElementsByClassName("comandos")[0].innerHTML='(getElementById)';
-     document.getElementsByClassName("comandos")[1].innerHTML='(getElementsByTagName)';
-     document.getElementsByClassName("comandos")[2].innerHTML='(getElementsByClassName)';
-     
-  </script> 
+  <div>
+    <p id="ex1">1 - Alterar o texto do "Menu 1" para Item 1.</p>
+    <p id="ex2">2 - Alterar o texto do "Menu 2" para "Item 2" através da Tag.</p>
+    <p id="ex3">3 - Inserir parênteses () nos comandos da classe "comandos".</p>
+    <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
+  </div>
+  <script>
+    // ex1
+    document.getElementsByTagName('p')[0].innerHTML = 'item 1';
+    // ex2
+    document.getElementsByTagName('p')[1].innerHTML = 'item 2';
+    // ex3  
+    document.getElementsByClassName("comandos")[0].innerHTML = document.getElementsByClassName("comandos")[0].innerHTML + "()";
+    document.getElementsByClassName("comandos")[1].innerHTML = document.getElementsByClassName("comandos")[1].innerHTML + "()";
+    document.getElementsByClassName("comandos")[2].innerHTML = document.getElementsByClassName("comandos")[2].innerHTML + "()";
+    // ex4
+    document.getElementById("ex1").style.color = "green";
+    document.getElementsByClassName("comandos")[1].style.color = "green";
+
+  </script>
 </body>
+
 </html>
