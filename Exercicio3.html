@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    text-align: center;
+  }
+
+  .botao{
+    background-color: gray;
+    border-radius: 6px;
+    color: white;
+  }
+</style>
+<body>
+  <div>
+    <button id="btnAumentar" class="botao" onclick="alterarTamanho(30)">+</button>
+    <button id="btnDiminuir" class="botao" onclick="alterarTamanho(-30)">-</button>
+  </div>
+
+  <div>
+    <img id="imagem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFx82h9FQzqCdcWITLj08dMTv6ZIvs6BmuMIYHo5Wdm6Ku30ICuPj0M54&s=10" alt="picollo">
+  </div>
+
+  <script>
+    const TAMANHO_MAX = 800;
+    const TAMANHO_MIN = 200;
+    let TAMANHO_ATM = 350;
+
+    const img = document.getElementById('imagem');
+    const btnAumentar = document.getElementById('btnAumentar');
+    const btnDiminuir = document.getElementById('btnDiminuir');
+
+    function atualizarInterface(){
+
+    img.style.width = TAMANHO_ATM + 'px';
+
+    btnAumentar.disabled = (TAMANHO_ATM >= TAMANHO_MAX);
+    btnDiminuir.disabled = (TAMANHO_ATM <= TAMANHO_MIN);
+    }
+
+    function alterarTamanho(variacao){
+      let novoTamanho = TAMANHO_ATM + variacao;
+      novoTamanho = Math.max(TAMANHO_MIN, Math.min(TAMANHO_MAX, novoTamanho));
+
+      if (novoTamanho !== TAMANHO_ATM){
+        TAMANHO_ATM = novoTamanho;
+        atualizarInterface();
+      }
+    }
+
+    atualizarInterface();
+  </script>
+</body>
+</html>
